@@ -9,6 +9,8 @@ vim.cmd("set clipboard=unnamed")
 vim.cmd("set mouse=a")
 vim.cmd("set autoindent")
 vim.opt.swapfile = false
+vim.g.copilot_enabled = 0
+
 -- Navigate vim panes better
 vim.keymap.set('n', '<c-k>', ':wincmd k<CR>')
 
@@ -34,10 +36,17 @@ vim.keymap.set("n", "<C-s>", ":%DB mysql://root@127.0.0.1:3306/mysql<CR>", { sil
 -- Run visual selection
 vim.keymap.set("v", "<C-s>", ":'<,'>DB mysql://root@127.0.0.1:3306/mysql<CR>", { silent = true })
 
+vim.keymap.set("n", "<C-e>", function()
+  vim.cmd("Copilot enable")
+  vim.notify("Batman Mode ativated", vim.log.levels.INFO, {
+    title = "GitHub Copilot",
+  })
+end, { silent = true })
+
 vim.keymap.set("n", "<C-d>", function()
   vim.cmd("Copilot disable")
   vim.api.nvim_echo(
-    { { "✓ Sagun is the god of Sql", "WarningMsg" } },
+    { { "Batman Mode deativated", "WarningMsg" } },
     false,
     {}
   )
