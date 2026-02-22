@@ -10,7 +10,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     lazy = false,
     opts = {
-      ensure_installed = { "lua_ls", "tsserver", "html", "cssls", "gopls", "pyright", "clangd", "tailwindcss", "rust_analyzer" },
+      ensure_installed = { "lua_ls", "tsserver", "html", "cssls", "gopls", "pyright", "clangd", "tailwindcss", "rust_analyzer", "sqls" },
     },
   },
   {
@@ -42,6 +42,9 @@ return {
         capabilities = capabilities
       })
       lspconfig.tailwindcss.setup({
+        capabilities = capabilities
+      })
+      lspconfig.sqls.setup({
         capabilities = capabilities
       })
       lspconfig.rust_analyzer.setup({
