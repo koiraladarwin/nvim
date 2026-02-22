@@ -11,15 +11,15 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-vim.api.nvim_exec([[
-    augroup transparency
-        autocmd!
-        autocmd VimEnter * hi Normal guibg=NONE ctermbg=NONE
-        autocmd VimEnter * hi NonText guibg=NONE ctermbg=NONE
-        autocmd VimEnter * hi LineNr guibg=NONE ctermbg=NONE
-    augroup END
-]], false)
-
+-- vim.api.nvim_exec([[
+--     augroup transparency
+--         autocmd!
+--         autocmd VimEnter * hi Normal guibg=NONE ctermbg=NONE
+--         autocmd VimEnter * hi NonText guibg=NONE ctermbg=NONE
+--         autocmd VimEnter * hi LineNr guibg=NONE ctermbg=NONE
+--     augroup END
+-- ]], false)
+--
 
 vim.api.nvim_set_keymap('n', 'yy', '"+yy', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'p', '"+p', { noremap = true, silent = true })

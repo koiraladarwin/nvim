@@ -1,15 +1,46 @@
 return {
   {
-    "bluz71/vim-moonfly-colors",
-    lazy = false,
-    name = "moonfly",
+    "navarasu/onedark.nvim",
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme "moonfly"
-      vim.o.background = "dark" -- Ensure the background is set to dark
+      require("onedark").setup({
+        style = "darker", -- dark | darker | cool | deep | warm | light
+        transparent = false,
+        term_colors = true,
+        ending_tildes = false,
+        diagnostics = {
+          darker = true,
+          undercurl = true,
+          -- background = true,
+        },
+      })
+      require("onedark").load()
     end,
   }
 }
+-- return {
+--   {
+--     "bluz71/vim-moonfly-colors",
+--     lazy = false,
+--     name = "moonfly",
+--     priority = 1000,
+--     config = function()
+--       vim.cmd.colorscheme "moonfly"
+--       vim.o.background = "dark" -- Ensure the background is set to dark
+--     end,
+--   }
+-- }
+-- return {
+--   {
+--     "NLKNguyen/papercolor-theme",
+--     lazy = false,
+--     priority = 1000,
+--     config = function()
+--       vim.o.background = "light"
+--       vim.cmd.colorscheme("PaperColor")
+--     end,
+--   }
+-- }
 --
 --
 -- return {

@@ -30,3 +30,8 @@ vim.api.nvim_set_keymap('n', '<C-l>', ':bnext<CR>',{ noremap = true, silent = tr
 vim.keymap.set('t', '<C-w>', "<C-\\><C-n><C-w>h", { silent = true })
 
 
+-- Run whole buffer
+vim.keymap.set("n", "<C-s>", ":%DB mysql://root@127.0.0.1:3306/mysql<CR>", { silent = true })
+
+-- Run visual selection
+vim.keymap.set("v", "<C-s>", ":'<,'>DB mysql://root@127.0.0.1:3306/mysql<CR>", { silent = true })
