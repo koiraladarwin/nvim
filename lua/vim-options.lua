@@ -24,8 +24,6 @@ vim.wo.number = true
 vim.api.nvim_set_keymap('n', '<Space><Space>', ':b#<CR>', { noremap = true, silent = true })
 
 
-vim.api.nvim_set_keymap('n', '<C-h>', ':bprev<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<C-l>', ':bnext<CR>',{ noremap = true, silent = true })
 --terminal
 vim.keymap.set('t', '<C-w>', "<C-\\><C-n><C-w>h", { silent = true })
 
@@ -35,3 +33,13 @@ vim.keymap.set("n", "<C-s>", ":%DB mysql://root@127.0.0.1:3306/mysql<CR>", { sil
 
 -- Run visual selection
 vim.keymap.set("v", "<C-s>", ":'<,'>DB mysql://root@127.0.0.1:3306/mysql<CR>", { silent = true })
+
+vim.keymap.set("n", "<C-d>", function()
+  vim.cmd("Copilot disable")
+  vim.api.nvim_echo(
+    { { "✓ Sagun is the god of Sql", "WarningMsg" } },
+    false,
+    {}
+  )
+end, { silent = true })
+
